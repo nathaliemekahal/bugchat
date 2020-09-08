@@ -12,7 +12,7 @@ class CommunicationZone extends Component {
       value: "",
       disposable: "",
       history: ["How can I help?"],
-      //   msgs: [],
+      // msgs: [],
     };
 
     // this.handleChange = this.handleChange.bind(this);
@@ -23,6 +23,11 @@ class CommunicationZone extends Component {
     this.setState({
       history: [...this.state.history, ...this.props.user.messages],
     });
+  };
+  componentDidUpdate = (prevProps) => {
+    if (this.props.user.contact !== prevProps.user.contact) {
+      console.log("changed");
+    }
   };
   handleChange = (event) => {
     this.setState({

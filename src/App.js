@@ -5,7 +5,7 @@ import ContactList from "./ContactList";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [history, setHistory] = useState([]);
+  // const [history, setHistory] = useState([]);
 
   const changeUser = (user) => {
     setUser(user);
