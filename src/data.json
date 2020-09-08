@@ -1,0 +1,16 @@
+[
+    {
+        "contact": "contact1",
+        "messages": [
+            "msg1",
+            "msg2"
+        ]
+    },
+    {
+        "contact": "contact2",
+        "messages": [
+            "msg1c2",
+            "msg2c2"
+        ]
+    }
+]

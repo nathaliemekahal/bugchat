@@ -1,11 +1,10 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-
-function ContactWindow() {
+function ContactWindow({ userName }) {
   return (
     <div className="headerWrapper">
-    <span className="contactName">Dr. Rubberduck</span>
+      <span className="contactName">{userName}</span>
     </div>
   );
 }
