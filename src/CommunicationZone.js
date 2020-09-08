@@ -3,6 +3,7 @@ import "./App.css";
 import InputZone from "./InputZone";
 import ChatZone from "./ChatZone";
 import ContactWindow from "./ContactWindow";
+import data from "./data.json";
 
 class CommunicationZone extends Component {
   constructor(props) {
@@ -11,12 +12,18 @@ class CommunicationZone extends Component {
       value: "",
       disposable: "",
       history: ["How can I help?"],
+      //   msgs: [],
     };
 
     // this.handleChange = this.handleChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  componentDidMount = () => {
+    // let user= data.filter((user) => user.contact === this.props.user.contact),
+    this.setState({
+      history: [...this.state.history, ...this.props.user.messages],
+    });
+  };
   handleChange = (event) => {
     this.setState({
       value: event.target.value,
@@ -29,6 +36,7 @@ class CommunicationZone extends Component {
         value: "",
         disposable: event.target.value,
         history: [...this.state.history, event.target.value],
+        // msgs: this.state.msgs.push(event.target.value),
       });
 
       setTimeout(() => this.dialogueEngine(), 3000);
@@ -103,7 +111,11 @@ class CommunicationZone extends Component {
     return (
       <div className="chatHost innerShadow">
         <ContactWindow userName={this.props.user.contact} />
-        <ChatZone chatItem={this.props.user.messages} />
+        <ChatZone
+          //   userName={this.props.user.contact}
+          //   chatItem={this.props.user.messages}
+          chatItem={this.props.user.messages}
+        />
         {console.log(this.props.user)}
         <InputZone
           handleChange={this.handleChange}

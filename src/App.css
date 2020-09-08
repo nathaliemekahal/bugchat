@@ -7,6 +7,9 @@
     rgba(34, 193, 195, 1) 0%,
     rgba(253, 187, 45, 0.29315476190476186) 100%
   );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .root {
@@ -17,6 +20,7 @@
 
 .chatHost {
   width: 100%;
+  flex: 0.7;
 }
 .input {
   margin-left: 8px;
@@ -46,12 +50,11 @@
 }
 
 .mainContainer {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
+  min-width: 700px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* align-items: center; */
   display: flex;
-  flex-direction: row;
 }
 .innerShadow {
   box-shadow: inset 0 0 3px #0000006e;
